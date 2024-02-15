@@ -116,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
     String endTime = _epochEndTime?.toString() ?? '';
 
     String url =
-        'https://gjehwqgnii.execute-api.us-east-1.amazonaws.com/latest/data?nodeId=$nodeId&gatewayId=$gatewayId&starttime=$startTime&endtime=$endTime';
+        'https://9bwx5whdv4.execute-api.us-east-1.amazonaws.com/v1/data?nodeId=$nodeId&gatewayId=$gatewayId&starttime=$startTime&endtime=$endTime';
 
     final response = await http.get(Uri.parse(url));
 
@@ -291,7 +291,7 @@ class SecondPage extends StatelessWidget {
               ListView.builder(
                 itemCount: sensorData.length,
                 itemBuilder: (context, index) {
-                  String timeImage = _getImageForTime(sensorData[index]["human_time"], sensorData[index]["light_intensity"]);
+                  String timeImage = _getImageForTime(sensorData[index]["human_time"], sensorData[index]["co2"]);
 
                   return Card(
                     elevation: 5,
@@ -312,7 +312,7 @@ class SecondPage extends StatelessWidget {
                                 ),
                                 SizedBox(height: 8),
                                 Text(
-                                  'Light Intensity: ${sensorData[index]["light_intensity"]}',
+                                  'Co2: ${sensorData[index]["co2"]}',
                                   style: TextStyle(fontSize: 16),
                                 ),
                                 SizedBox(height: 8),
@@ -334,7 +334,7 @@ class SecondPage extends StatelessWidget {
                           Container(
                             height: 100, // Set your desired height
                             width: 100, // Set your desired width
-                            child: Image.asset(timeImage),
+                            //child: Image.asset(timeImage),
                           ),
                         ],
                       ),
