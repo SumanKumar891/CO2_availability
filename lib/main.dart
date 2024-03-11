@@ -116,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
     String endTime = _epochEndTime?.toString() ?? '';
 
     String url =
-        'https://9bwx5whdv4.execute-api.us-east-1.amazonaws.com/v1/data?nodeId=$nodeId&gatewayId=$gatewayId&starttime=$startTime&endtime=$endTime';
+        'https://qqvlf6v6kc.execute-api.us-east-1.amazonaws.com/v1/data?nodeId=$nodeId&gatewayId=$gatewayId&starttime=$startTime&endtime=$endTime';
 
     final response = await http.get(Uri.parse(url));
 
@@ -202,7 +202,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
                           textStyle: TextStyle(fontSize: 18),
-                          primary: Colors.white,
+                          backgroundColor: Colors.white,
                           side: BorderSide(color: Colors.red, width: 2.0),
                         ),
                       ),
